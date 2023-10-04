@@ -14,11 +14,11 @@ on:
 
 jobs:
   task:
-    runs-on: [self-hosted]
+    runs-on: [ self-hosted ]
     steps:
       - uses: actions/checkout@v1
       - name: Check
         run: |
-          echo ${{github.events.inputs.schemas}}
+          echo ${{ github.events.inputs.schemas }}
         
       
