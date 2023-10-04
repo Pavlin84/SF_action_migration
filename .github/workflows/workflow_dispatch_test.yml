@@ -16,8 +16,8 @@ jobs:
   task:
     runs-on: [self_hosted]
     steps:
-      - name: Check
       - uses: actions/checkout@v1
+      - name: Check
         run: |
           echo ${{github.events.inputs.schemas}}
         
