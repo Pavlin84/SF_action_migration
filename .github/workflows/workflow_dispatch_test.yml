@@ -14,7 +14,7 @@ on:
 
 jobs:
   task:
-    runs-on: [ self-hosted ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Check
