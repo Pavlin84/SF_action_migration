@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       with:  
-        ref: DEV_TEST
+        ref: ${{ github.event.inputs.branch_name }}
     - name: Check
       run: |
           #echo -e 'Running on default: ${{ steps.branch-name.outputs.current_branch }}   
