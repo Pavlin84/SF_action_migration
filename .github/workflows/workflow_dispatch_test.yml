@@ -10,15 +10,18 @@ on:
         - UAT
       schemas:
         type: string
-        description: "Target schemas"
-
+      branch_name:
+        type: string
 jobs:
   task:
     runs-on: ubuntu-latest
+    env: 
+      BRANCH_NAME : ${{ github.event.inputs.schemas }} 
     steps:
-      - uses: actions/checkout@v1
-      - name: Check
-        run: |
+    - uses: actions/checkout@v1
+      with:  "{$BRANCH_NAME}"
+    - name: Check
+      run: |
           echo -e '${{ github.event.inputs.schemas }}'
         
       
