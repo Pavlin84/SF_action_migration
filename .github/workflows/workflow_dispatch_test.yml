@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs: 
       enviroment:
-        type: chioce
+        type: choice
         options:
         - DEV
         - UAT
