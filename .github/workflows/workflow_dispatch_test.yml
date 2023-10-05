@@ -9,7 +9,7 @@ on:
         - DEV
         - UAT
       schemas:
-        type: array
+        type: string
         description: "Target schemas"
 
 jobs:
