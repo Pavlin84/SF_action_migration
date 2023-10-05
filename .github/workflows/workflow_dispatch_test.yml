@@ -19,6 +19,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: Check
         run: |
-          echo -e '${{ github.events.inputs.schemas }}'
+          echo -e '${{ github.event.inputs.schemas }}'
         
       
