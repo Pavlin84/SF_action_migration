@@ -16,7 +16,7 @@ jobs:
   task:
     runs-on: ubuntu-latest
     env: 
-      BRANCH_NAME : ${{ github.event.inputs.schemas }} 
+      BRANCH_NAME : ${{ github.event.inputs.branch_name }} 
     steps:
     - uses: actions/checkout@v1
       with:  
