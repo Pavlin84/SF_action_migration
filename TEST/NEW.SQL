@@ -1,0 +1,1 @@
+SLECT * FROM T1
