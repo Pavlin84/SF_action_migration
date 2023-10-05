@@ -19,9 +19,9 @@ jobs:
       BRANCH_NAME : ${{ github.event.inputs.schemas }} 
     steps:
     - uses: actions/checkout@v1
-      with:  "{$BRANCH_NAME}"
+      with:  
+        ref: $BRANCH_NAME
     - name: Check
       run: |
-          echo -e '${{ github.event.inputs.schemas }}'
-        
+          echo "Running on default: ${{ steps.branch-name.outputs.current_branch }}"         
       
