@@ -12,6 +12,9 @@ on:
         type: string
       branch_name:
         type: string
+      list_of_values:
+        description: 'Enter a list of values (comma-separated)'
+        required: true
 jobs:
   task:
     runs-on: ubuntu-latest
@@ -19,11 +22,20 @@ jobs:
     - uses: actions/checkout@v1
       with:  
         ref: ${{ github.event.inputs.branch_name }}
-    - name: Check
+    - name: Check_branch_namе
       run: |
           #echo -e 'Running on default: ${{ steps.branch-name.outputs.current_branch }}   
           echo -e 'var name: ${{ github.event.inputs.branch_name }}'
 
-          for file in ${{ steps.changed-files.outputs.all_changed_files}}; do
-          echo "$file"
-      
+          #for file in ${{ steps.changed-files.outputs.all_changed_files}}; do
+          #echo "$file"
+          
+    - name: list_of_values_input
+      run: |
+        list_of_values="${{ inputs.list_of_values }}"
+        FS=',' read -ra values <<< "$list_of_values"
+          
+        # Now you have individual values in the 'values' array
+        for value in "${values[@]}"; do
+          echo "Value: $value"
+        done
