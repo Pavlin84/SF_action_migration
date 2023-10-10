@@ -45,9 +45,9 @@ jobs:
           #echo -e 'Running on default: ${{ steps.branch-name.outputs.current_branch }}   
           #echo -e 'var name: ${{ github.event.inputs.branch_name }}'
           
-          current_branch="${{ github.event.inputs.branch }}"
-          base_branch="main"           
-          changed_files=$(git diff --name-only $base_branch...$current_branch)
+          current_branch="origin/${{ github.head_ref }}"
+          base_branch="origin/${{ github.base_ref }}"
+          changed_files=$(git diff --name-only $base_branch $current_branch)
           #echo "::set-output name=changed_files::$changed_files"   
           
           for file in ${changed_files[@]; do
