@@ -46,7 +46,7 @@ jobs:
           echo -e 'var name: ${{ github.event.inputs.branch_name }}'
    
           for file in ${{ steps.changed-files.outputs.all_changed_files}}; do
-            echo "$file"
+            echo "Files: $file"
           done
           
  
