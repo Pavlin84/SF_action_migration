@@ -40,13 +40,13 @@ jobs:
     - uses: actions/checkout@v1
       with:  
         ref: ${{ github.event.inputs.branch_name }}
-    - name: Check
+    - name: Get branch
       run: |
           #echo -e 'Running on default: ${{ steps.branch-name.outputs.current_branch }}   
           #echo -e 'var name: ${{ github.event.inputs.branch_name }}'
           
-          current_branch="origin/${{ github.head_ref }}"
-          base_branch="origin/${{ github.base_ref }}"
+          current_branch="origin/"${{ github.ref#refs/heads/ }}
+          base_branch="origin/develop"
           echo "branch name: $current_branch"
           echo "branch name: $base_branch"
           
