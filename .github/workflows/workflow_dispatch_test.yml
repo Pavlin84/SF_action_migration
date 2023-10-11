@@ -45,7 +45,7 @@ jobs:
           #echo -e 'Running on default: ${{ steps.branch-name.outputs.current_branch }}   
           #echo -e 'var name: ${{ github.event.inputs.branch_name }}'
           
-          current_branch="origin/"${{ github.heads }}
+          current_branch="origin/"${GITHUB_REF##refs/heads/}
           base_branch="origin/develop"
           echo "branch name: $current_branch"
           echo "branch name: $base_branch"
